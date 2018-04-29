@@ -1,12 +1,16 @@
-cryptonote-sumokoin-pool
+loki-pool
 ====================
 
-**For the latest features and improvements, please use source code from @SadBatman repo  https://github.com/SadBatman/cryptonote-sumokoin-pool/**
-
-High performance Node.js (with native C addons) mining pool for CryptoNote based coins such as Bytecoin, DuckNote, Monero, QuazarCoin, Boolberry, Dashcoin, Sumokoin etc..
+High performance Node.js (with native C addons) mining pool for CryptoNote based coins such as Bytecoin, DuckNote, Monero, QuazarCoin, Boolberry, Dashcoin  etc..
 Comes with lightweight example front-end script which uses the pool's AJAX API.
 
+#### Disclaimer
 
+This has been forked from Sumokoin's example and rigged to work with Loki. It
+is meant to be used as a functional starting point only, so there might be some
+Sumokoin references still lying around.  If somebody wants to enhance or
+maintain this, consider updating to include the upstream changes at
+https://github.com/SadBatman/cryptonote-sumokoin-pool/
 
 #### Table of Contents
 * [Features](#features)
@@ -119,8 +123,8 @@ sudo apt-get install git redis-server libboost1.55-all-dev nodejs-dev nodejs-leg
 Clone the repository and run `npm update` for all the dependencies to be installed:
 
 ```bash
-git clone https://github.com/sumoprojects/cryptonote-sumokoin-pool.git pool
-cd pool
+git clone https://github.com/jcktm/loki-pool
+cd loki-pool
 npm update
 ```
 
@@ -130,10 +134,10 @@ npm update
 Explanation for each field:
 ```javascript
 /* Used for storage in redis so multiple coins can share the same redis instance. */
-"coin": "Sumokoin",
+"coin": "Loki",
 
 /* Used for front-end display */
-"symbol": "SUMO",
+"symbol": "LOK",
 
 /* Minimum units in a single coin, see COIN constant in DAEMON_CODE/src/cryptonote_config.h */
 "coinUnits": 1000000000,
@@ -175,7 +179,7 @@ Explanation for each field:
     "clusterForks": "auto",
 
     /* Address where block rewards go, and miner payments come from. */
-    "poolAddress": "Sumoo64zh7dRFyB8dgDWZMLmzKBgGXYWZCG4NBF2VcvzEuiSQpMjyyiYJ1Ra696pZu56PPFQNBDdB1rZjyeX1RVKeWZgHg7pTxj"
+    "poolAddress": "<Put your pool's loki address here>"
 
     /* Poll RPC daemons for new blocks every this many milliseconds. */
     "blockRefreshInterval": 1000,
@@ -228,7 +232,7 @@ Explanation for each field:
     },
 
     /* Set difficulty on miner client side by passing <address> param with .<difficulty> postfix
-       minerd -u Sumoo64zh7dRFyB8dgDWZMLmzKBgGXYWZCG4NBF2VcvzEuiSQpMjyyiYJ1Ra696pZu56PPFQNBDdB1rZjyeX1RVKeWZgHg7pTxj.5000 */
+       minerd -u <address>.5000 */
     "fixedDiff": {
         "enabled": true,
         "separator": ".", // character separator between <address> and <difficulty>
@@ -393,7 +397,7 @@ node init.js
 The file `config.json` is used by default but a file can be specified using the `-config=file` command argument, for example:
 
 ```bash
-node init.js -config=config_sumokoin.json
+node init.js -config=config_loki.json
 ```
 
 This software contains four distinct modules:
@@ -430,13 +434,10 @@ var api = "http://poolhost:8117";
 var poolHost = "poolhost.com";
 
 /* IRC Server and room used for embedded KiwiIRC chat. */
-var irc = "irc.freenode.net/#sumokoin";
+var irc = "irc.freenode.net/#loki-project";
 
 /* Contact email address. */
 var email = "support@poolhost.com";
-
-/* Market stat display params from https://www.cryptonator.com/widget */
-var cryptonatorWidget = ["SUMO-BTC", "SUMO-USD", "SUMO-EUR"];
 
 /* Download link to cryptonote-easy-miner for Windows users. */
 var easyminerDownload = "https://github.com/zone117x/cryptonote-easy-miner/releases/";

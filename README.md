@@ -1,16 +1,18 @@
 loki-pool
 ====================
 
-High performance Node.js (with native C addons) mining pool for CryptoNote based coins such as Bytecoin, DuckNote, Monero, QuazarCoin, Boolberry, Dashcoin  etc..
-Comes with lightweight example front-end script which uses the pool's AJAX API.
-
-#### Disclaimer
+## Disclaimer
 
 This has been forked from Sumokoin's example and rigged to work with Loki. It
 is meant to be used as a functional starting point only, so there might be some
 Sumokoin references still lying around.  If somebody wants to enhance or
 maintain this, consider updating to include the upstream changes at
 https://github.com/SadBatman/cryptonote-sumokoin-pool/
+
+-----
+
+High performance Node.js (with native C addons) mining pool for CryptoNote based coins such as Bytecoin, DuckNote, Monero, QuazarCoin, Boolberry, Dashcoin  etc..
+Comes with lightweight example front-end script which uses the pool's AJAX API.
 
 #### Table of Contents
 * [Features](#features)
